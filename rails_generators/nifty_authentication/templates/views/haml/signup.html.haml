@@ -3,22 +3,18 @@
 %p== Already have an account? #{link_to "Log in", login_path}.
 
 - form_for @<%= user_singular_name %> do |f|
-  = f.error_messages
-  %p
-    = f.label :username
-    %br
-    = f.text_field :username
-  %p
-    = f.label :email, "Email Address"
-    %br
-    = f.text_field :email
-  %p
-    = f.label :password
-    %br
-    = f.password_field :password
-  %p
-    = f.label :password_confirmation, "Confirm Password"
-    %br
-    = f.password_field :password_confirmation
-  %p
-    = f.submit "Sign up"
+	= f.error_messages
+	.formline
+		= f.label :username
+		= f.text_field :username
+	.formline
+		= f.label :email, "Email Address"
+		= f.text_field :email
+	.formline
+		= f.label :password
+		= f.password_field :password
+	.formline
+		= f.label :password_confirmation, "Confirm Password"
+		= f.password_field :password_confirmation
+	.formsubmitline
+		= f.submit "Sign up"
